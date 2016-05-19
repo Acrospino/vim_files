@@ -1,3 +1,6 @@
+execute pathogen#infect()
+
+
 set shiftwidth=4
 set tabstop=4
 set expandtab
@@ -7,10 +10,18 @@ set number          " line numbers
 set backspace=indent,eol,start   "backspaces delete these things
 set foldmethod=indent
 set foldlevel=99
+set fileformats=unix,dos,mac
 
 syntax enable
 filetype on
+filetype plugin on
 filetype plugin indent on
+autocmd FileType scss,css,html setlocal shiftwidth=2 softtabstop=2
+
+set omnifunc=syntaxcomplete#Complete
+
+set ballooneval
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
 
 map <silent><A-Right> :tabnext<CR>
 map <silent><A-Left> :tabprevious<CR> 
