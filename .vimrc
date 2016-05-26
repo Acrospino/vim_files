@@ -2,6 +2,8 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 execute pathogen#infect()
 
+set shell=/bin/bash
+
 
 set shiftwidth=4
 set tabstop=4
